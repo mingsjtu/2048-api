@@ -13,10 +13,13 @@ follow ExpectiMax agent and create your own CNN model
 * [`webapp.py`](webapp.py): run the web app (backend) demo.
 * [`evaluate.py`](evaluate.py): evaluate your self-defined agent. test time = 50 
 * [`online_train.py`](online_train.py): get your own agent's weight.The structure of the model can be found
-* [`CNN_new_141.zip`](CNN_new_141.zip): get your own agent's weight.The structure of the model can be found
+* [`CNN_new_141.zip`](CNN_new_141.zip): best model weight file trained by me
 # Requirements
 * code only tested on linux system (ubuntu 16.04)
 * Python 3 (Anaconda 3.6.3 specifically) with numpy and flask
+* Tensorflow,keras,numpy
+# model structure
+![model](preview2048.gif)
 
 # for train
 ```bash
@@ -24,19 +27,23 @@ python online_train.py
 ```
 * you will get your own model taught by ExpectiMax agent
 
-# To define your own agents
+# My own agents
+In file ./game2048/agent.py
 ```python
-from game2048.agents import Agent
 
-class YourOwnAgent(Agent):
+class MyAgent(Agent):
+    def __init__(self, game,display=None):
+        super().__init__(game, display)
+        self.model1= model_my
+        # self.model2= model2
+        # self.model3= model3
+
+        # print("load_model",modelpath1)
+
 
     def step(self):
-        '''To define the agent's 1-step behavior given the `game`.
-        You can find more instance in [`agents.py`](game2048/agents.py).
+    ...
         
-        :return direction: 0: left, 1: down, 2: right, 3: up
-        '''
-        direction = some_function(self.game)
         return direction
 
 ```
@@ -48,6 +55,12 @@ cd game2048/expectimax
 bash configure
 make
 ```
+# For test your model value
+
+```bash
+python evaluate.py
+```
+you will get the average score of your agent (original test time is 50)
 
 # To run the web app
 ```bash
