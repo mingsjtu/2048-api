@@ -1,5 +1,6 @@
 # 2048-api
-A 2048 game api for training supervised learning (imitation learning) or reinforcement learning agents
+A 2048 game api for training supervised learning (imitation learning) 
+follow ExpectiMax agent and create your own CNN model
 
 # Code structure
 * [`game2048/`](game2048/): the main package.
@@ -10,11 +11,18 @@ A 2048 game api for training supervised learning (imitation learning) or reinfor
 * [`explore.ipynb`](explore.ipynb): introduce how to use the `Agent`, `Display` and `Game`.
 * [`static/`](static/): frontend assets (based on Vue.js) for web app.
 * [`webapp.py`](webapp.py): run the web app (backend) demo.
-* [`evaluate.py`](evaluate.py): evaluate your self-defined agent.
-
+* [`evaluate.py`](evaluate.py): evaluate your self-defined agent. test time = 50 
+* [`online_train.py`](online_train.py): get your own agent's weight.The structure of the model can be found
+* [`CNN_new_141.zip`](CNN_new_141.zip): get your own agent's weight.The structure of the model can be found
 # Requirements
 * code only tested on linux system (ubuntu 16.04)
 * Python 3 (Anaconda 3.6.3 specifically) with numpy and flask
+
+# for train
+```bash
+python online_train.py
+```
+* you will get your own model taught by ExpectiMax agent
 
 # To define your own agents
 ```python
