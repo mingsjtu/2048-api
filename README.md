@@ -19,7 +19,7 @@ follow ExpectiMax agent and create your own CNN model
 * Python 3 (Anaconda 3.6.3 specifically) with numpy and flask
 * Tensorflow,keras,numpy
 # model structure
-![model](preview2048.gif)
+![model](model_structure.jpg)
 
 # for train
 ```bash
